@@ -1,6 +1,5 @@
 package br.com.desafiolivrosvirtual.controller;
 
-import br.com.desafiolivrosvirtual.dtos.AuthorRequest;
 import br.com.desafiolivrosvirtual.model.Author;
 import br.com.desafiolivrosvirtual.service.AuthorService;
 import jakarta.validation.Valid;
@@ -16,7 +15,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/author")
-public class AuthorController {
+public class CategoryController {
 
     @Autowired
     private AuthorService authorService;

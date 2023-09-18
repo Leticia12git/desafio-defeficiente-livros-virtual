@@ -12,7 +12,12 @@ public class AuthorService {
     @Autowired
     private AuthorRepository authorRepository;
 
-    public Author create(Author author){
-        return authorRepository.save(author);
+    public Author create(Author authorRequest) {
+        Author newAuthor = new Author();
+        newAuthor.setName(authorRequest.getName());
+        newAuthor.setEmail(authorRequest.getEmail());
+        newAuthor.setDescription(authorRequest.getDescription());
+        authorRequest.getDateRegister();
+        return authorRepository.save(authorRequest);
     }
 }

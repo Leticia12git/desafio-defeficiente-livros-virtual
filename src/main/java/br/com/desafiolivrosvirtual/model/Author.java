@@ -3,8 +3,13 @@ package br.com.desafiolivrosvirtual.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(schema = "authors")
 public class Author {
@@ -17,7 +22,7 @@ public class Author {
     @Email
     private String email;
     @NotBlank
-    @Column( precision = 400)
+    @Column( length = 400)
     private String description;
-    private LocalDate dateRegister;
+    private LocalDateTime dateRegister = LocalDateTime.now();
 }
